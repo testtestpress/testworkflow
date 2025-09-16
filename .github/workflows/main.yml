@@ -32,7 +32,4 @@ jobs:
         run: |
           npm install -g vercel
           cd my-react-project
-          vercel --prod \
-            --token ${{ secrets.VERCEL_TOKEN }} \
-            --org ${{ secrets.VERCEL_ORG_ID }} \
-            --project ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
