@@ -4,7 +4,7 @@ const ExampleComponent = () => {
     return (
         <div>
             <h1>Hi from ExampleComponent!</h1>
-            <p>github action is now working </p>
+            <p>hii good evening india !  </p>
         </div>
     );
 };
