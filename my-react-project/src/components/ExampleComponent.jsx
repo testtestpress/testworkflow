@@ -4,7 +4,7 @@ const ExampleComponent = () => {
     return (
         <div>
             <h1>Hi from ExampleComponent!</h1>
-            <p>This component.</p>
+            <p>component componentcomponentcomponentcomponentcomponentcomponentcomponentcomponentcomponentcomponentcomponent.</p>
         </div>
     );
 };
