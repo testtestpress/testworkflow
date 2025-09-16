@@ -1,0 +1,38 @@
+name: Deploy to Vercel on Dev Merge
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          cd my-react-project
+          npm ci
+
+      - name: Build project
+        run: |
+          cd my-react-project
+          npm run build
+
+      - name: Deploy to Vercel
+        run: |
+          npm install -g vercel
+          cd my-react-project
+          vercel --prod \
+            --token ${{ secrets.VERCEL_TOKEN }} \
+            --org ${{ secrets.VERCEL_ORG_ID }} \
+            --project ${{ secrets.VERCEL_PROJECT_ID }}
